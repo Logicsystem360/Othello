@@ -1,3 +1,3 @@
 Othello
 =======
-Tes
+Test pour le projet Othello
