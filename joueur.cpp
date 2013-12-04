@@ -1,11 +1,19 @@
 // Fichier pour les fonctions de la classe joueur
 
-class Joueur
+#include <iostream>
+#include <string>
+#include "jeu.h"
+
+using namespace std;
+
+void Joueur::saisir()
 {
-public:
-    std::string nom;
-    int score;
-    void saisir();
-    void couleur();
-    char coul;
-};
+    cout << "Veuillez saisir votre nom de joueur !" << endl;
+    cin >> nom;
+}
+
+void Joueur::couleur()
+{
+    cout << "Choix de la couleur ! (N pour Noir ou B pour Blanc)" << endl;
+    cin >> coul;
+}
