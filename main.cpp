@@ -1,5 +1,7 @@
 #include <iostream>
 #include "jeu.h"
+#include "plateau.h"
+#include "joueur.h"
 
 using namespace std;
 
