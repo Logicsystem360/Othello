@@ -1,9 +1,11 @@
 #include <iostream>
+#include "jeu.h"
 
 using namespace std;
 
 int main()
 {
-  cout << "hello world" << endl;
-  return 0;
+    plateau p;
+    p.afficher();
+    return 0;
 }
