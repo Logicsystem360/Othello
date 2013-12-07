@@ -1,105 +1,47 @@
 //Fichier pour les fonctions de la classe plateau
 
 #include <iostream>
+#include "main.h"
 #include "jeu.h"
+#include "Plateau.h"
+#include "joueur.h"
 
 using namespace std;
+
+//////////////////////////////////////
+// methode pour afficher le tableau.//
+//////////////////////////////////////
 
 void plateau::afficher()
 {
     int i,j;
-    cout << " Jeu d'othello " <<endl;
-    cout << " A B C D E F G H " <<endl;
+    cout << "             Jeu d'othello        " <<endl;        //afficher le titre
+    cout << "      A   B   C   D   E   F   G   H " <<endl;      //afficher les noms des colonnes
     for (i=0; i<2*MAX+1; i++)
     {
+        if (i%2==1)
+            cout << "  " << (i+1)/2;        //afficher les nom des lignes
+        if (i%2==0)
+            cout << "    ";
         for (j=0; j<2*MAX+1; j++)
         {
-            //D'abord,ce sont les quatre coins.
-            if (i==0 && j==0)
+            if (i%2==0)
             {
-                cout << "©³";
-            }
-            else if (i==2*MAX && j==0)
-            {
-                cout << "©»";
-            }
-            else if (i==0 && j==2*MAX)
-            {
-                cout << "©·";
-            }
-            else if (i==2*MAX && j==2*MAX)
-            {
-                cout << "©¿";
-            }
-            //ce sont les bordures.
-            else if (i==0)
-            {
-                if (j%2==1)
-                {
-                    cout << "©¥";
-                }
+                if(j%2==0)
+                    cout << "+";
                 else
-                {
-                    cout << "©×";
-                }
+                    cout << " - ";
             }
-            else if (i==2*MAX)
-            {
-                if (j%2==1)
-                {
-                    cout << "©¥";
-                }
-                else
-                {
-                    cout << "©ß";
-                }
-            }
-            else if (j==2*MAX)
-            {
-                if (i%2==1)
-                {
-                    cout << "©§";
-                }
-                else
-                {
-                    cout << "©Ï";
-                }
-            }
-            else if (j==0)
-            {
-                if (i%2==1)
-                {
-                    cout << "©§";
-                }
-                else
-                {
-                    cout << "©Ç";
-                }
-            }
-            //ce sont dans le plateau.
-            else if (i%2==0)
-            {
-                if (j%2==1)
-                {
-                    cout << "©¥";
-                }
-                else
-                {
-                    cout << "©ï";
-                }
-            }
-            else if (i%2==1)
+            else
             {
                 if (j%2==0)
-                {
-                    cout << "©§";
-                }
-                else //afficher les pions.
-                {
-                    cout << " " <<p[(i-1)/2][j/2];
-                }
+                    cout << " | ";
+                else
+                    cout << p[i/2][j/2] ;
             }
         }
         cout << endl;
     }
 }
+
+
